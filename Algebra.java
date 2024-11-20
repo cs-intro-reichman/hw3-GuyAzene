@@ -75,7 +75,7 @@ public class Algebra {
             result = times(result, x);
         }
 
-        return x < 0 ? 0 : result;
+        return x < 0 ? div(1,result) : result;
     }
 
     // Returns the integer part of x1 / x2
@@ -113,6 +113,7 @@ public class Algebra {
     public static int sqrt(int x) {
         int root = 0;
         if(x<=0) return 0;
+        if(x==1) return 1;
         while (pow(root, 2) < x) {
             if (pow(root, 2) == x) {
                 return root;
