@@ -60,7 +60,7 @@ public class LoanCalc {
     // Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {
         // Replace the following statement with your code
-        iterationCounter = 0;
+        iterationCounter = 1;
         double l = loan / n;
         double h = (loan * Math.pow(1 + rate / 100, n)) / n;
         double g;
