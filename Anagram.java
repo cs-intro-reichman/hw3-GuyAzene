@@ -32,7 +32,7 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
-		if(str1.length() != str2.length()) return false;
+//		if(str1.length() != str2.length()) return false;
 
 		String letters = "abcdefghijklmnopqrstuvwxyz1234567890";
 
