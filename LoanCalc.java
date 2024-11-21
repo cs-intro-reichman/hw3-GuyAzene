@@ -62,7 +62,7 @@ public class LoanCalc {
         // Replace the following statement with your code
         iterationCounter = 0;
         double l = loan / n;
-        double h = (loan * Math.pow(1 + rate / 100, n)) / n;
+        double h = loan;
         double g;
 
         // Bisection loop
