@@ -58,7 +58,6 @@ public class Anagram {
 	public static String preProcess(String str) {
 		String letters = "abcdefghijklmnopqrstuvwxyz1234567890";
 		String result = "";
-
 		for (int i = 0; i < str.length(); i++) {
 			char ch = Character.toLowerCase(str.charAt(i));
 
@@ -66,7 +65,6 @@ public class Anagram {
 				result += ch;
 			}
 		}
-
 		return result;
 	} 
 	   

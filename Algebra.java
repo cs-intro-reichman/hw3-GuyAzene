@@ -6,19 +6,21 @@
 public class Algebra {
     public static void main(String args[]) {
         // Tests some of the operations
-	    System.out.println(plus(-2,-3));   // 2 + 3
-	    System.out.println(minus(-7,-2));  // 7 - 2
-   		System.out.println(minus(2,7));  // 2 - 7
-        System.out.println(times(3, 4));  // 3 * 4
-   		System.out.println(plus(2,times(4,2)));  // 2 + 4 * 2
-   		System.out.println(pow(5,3));      // 5^3
-   		System.out.println(pow(3,5));      // 3^5
-   		System.out.println(div(12,3));   // 12 / 3
-   		System.out.println(div(-5,-5));    // 5 / 5
-   		System.out.println(div(-25,7));   // 25 / 7
-   		System.out.println(mod(25,7));   // 25 % 7
-   		System.out.println(mod(120,6));  // 120 % 6
-   		System.out.println(sqrt(36));
+//	    System.out.println(plus(-2,-3));   // 2 + 3
+//	    System.out.println(minus(-7,-2));  // 7 - 2
+//   		System.out.println(minus(2,7));  // 2 - 7
+//        System.out.println(times(3, 4));  // 3 * 4
+//   		System.out.println(plus(2,times(4,2)));  // 2 + 4 * 2
+//   		System.out.println(pow(5,3));      // 5^3
+//        System.out.println(pow(3, 5));      // 3^5
+//   		System.out.println(div(12,3));   // 12 / 3
+//   		System.out.println(div(-5,-5));    // 5 / 5
+//   		System.out.println(div(-25,7));   // 25 / 7
+//   		System.out.println(mod(25,7));   // 25 % 7
+//   		System.out.println(mod(120,6));  // 120 % 6
+//        System.out.println(pow(6, 2));      // 3^5
+
+        System.out.println(sqrt(36));
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
     }
@@ -69,19 +71,22 @@ public class Algebra {
         }
 
         int result = 1;
-        int absb = n < 0 ? minus(0, n) : n;
+        int absa = x < 0 ? minus(0, x) : x;
+        int absn = n < 0 ? minus(0, n) : n;
+        boolean isPowEven = (mod(n, 2) == 0);
 
-        for (int i = 0; i < absb; i++) {
-            result = times(result, x);
+        for (int i = 0; i < absn; i++) {
+            result = times(result, absa);
         }
-
-        return x < 0 ? div(1,result) : result;
+        if (isPowEven && (x < 0)) {return result;}
+        else if ((!isPowEven && (x < 0))) {return minus(0, x);}
+        else return result;
     }
 
     // Returns the integer part of x1 / x2
     public static int div(int x1, int x2) {
         if (x2 == 0) {
-           return 0;
+            return 0;
         }
 
         int result = 0;
@@ -111,15 +116,14 @@ public class Algebra {
 
     // Returns the integer part of sqrt(x)
     public static int sqrt(int x) {
+        if (x <= 0) return 0;
+        if (x == 1) return 1;
         int root = 0;
-        if(x<=0) return 0;
-        if(x==1) return 1;
-        while (pow(root, 2) < x) {
-            if (pow(root, 2) == x) {
-                return root;
-            }
+
+        while (pow(root, 2) <= x) {
             root++;
         }
+
         return minus(root, 1);
     }
 }
