@@ -12,17 +12,17 @@ public class Algebra {
 //        System.out.println(times(3, 4));  // 3 * 4
 //   		System.out.println(plus(2,times(4,2)));  // 2 + 4 * 2
 //   		System.out.println(pow(5,3));      // 5^3
-//        System.out.println(pow(3, 5));      // 3^5
+        System.out.println(pow(-3, 5));      // 3^5
 //   		System.out.println(div(12,3));   // 12 / 3
 //   		System.out.println(div(-5,-5));    // 5 / 5
 //   		System.out.println(div(-25,7));   // 25 / 7
 //   		System.out.println(mod(25,7));   // 25 % 7
 //   		System.out.println(mod(120,6));  // 120 % 6
 //        System.out.println(pow(6, 2));      // 3^5
-
-        System.out.println(sqrt(36));
-		System.out.println(sqrt(263169));
-   		System.out.println(sqrt(76123));
+//
+//        System.out.println(sqrt(36));
+//		System.out.println(sqrt(263169));
+//   		System.out.println(sqrt(76123));
     }
 
     // Returns x1 + x2
@@ -79,7 +79,7 @@ public class Algebra {
             result = times(result, absa);
         }
         if (isPowEven && (x < 0)) {return result;}
-        else if ((!isPowEven && (x < 0))) {return minus(0, x);}
+        else if ((!isPowEven && (x < 0))) {return minus(0, result);}
         else return result;
     }
 
