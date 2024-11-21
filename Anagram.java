@@ -56,7 +56,7 @@ public class Anagram {
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
-		String letters = "abcdefghijklmnopqrstuvwxyz1234567890";
+		String letters = "abcdefghijklmnopqrstuvwxyz1234567890 ";
 		String result = "";
 		for (int i = 0; i < str.length(); i++) {
 			char ch = Character.toLowerCase(str.charAt(i));
